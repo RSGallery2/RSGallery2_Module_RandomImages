@@ -1,0 +1,58 @@
+/*	The entire module is contained in a div tag with class mod_rsgallery2_random_images.
+	Inside that div, there is a table with class mod_rsgallery2_random_images_table.
+	The table consitst of rows, alternating between the name (with a colspan) and the images.
+	The images are in a link, so <td>-<a href...>-<img...>-</a>-</td>m none of them with classes.
+
+*/
+
+div.mod_rsgallery2_random_images{
+	width:100%;
+	margin:0;
+	padding:0;
+	border: 0px solid #ff0000;
+	overflow: visible;	/*visible/hidden/scroll/auto*/
+	text-align: center;
+}
+div.mod_rsgallery2_random_images img{
+	border: 1px solid #A9A9A9;
+	float:left;
+	background-image: url(../images/shadowAlpha.png) no-repeat bottom right !important;
+	background-image: url(../images/shadow.gif) no-repeat bottom right;
+}
+
+table.mod_rsgallery2_random_images_table{
+	margin: 10px;
+}
+table.mod_rsgallery2_random_images_table tr {
+	border: 0px solid #0000ff;
+}
+table.mod_rsgallery2_random_images_table td {
+	border: 0px solid #0000ff;
+	padding: 4px 0 0 0;
+}
+
+/* Thumbs shadow css. If you don't want shadow, comment out the next 2 CSS-declarations */
+.mod_rsgallery2_random_images-shadow {
+  float:left;
+  background: url(../images/shadowAlpha.png) no-repeat bottom right !important;
+  background: url(../images/shadow.gif) no-repeat bottom right;
+  margin: 10px 0 0 10px !important;
+  margin: 10px 0 0 5px;
+  }
+.mod_rsgallery2_random_images-shadow img {
+  display: block;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #a9a9a9;
+  margin: -6px 6px 6px -6px;
+  padding: 4px;
+  }
+/* end Thumbs shadow */
+
+/* uncomment the next tag if you have commented out the previous 2 tags */
+/*
+.mod_rsgallery2_random_images-shadow img {
+	border:none;
+}
+*/
+

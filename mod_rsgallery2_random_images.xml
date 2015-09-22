@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.0" method="upgrade">
+    <name>mod_rsgallery2_random_images</name>
+    <author>RSGallery2 Team</author>
+	<creationDate>22 Sept 2015</creationDate>
+	<copyright>(C) 2012-2015 RSGallery2 Team. All rights reserved.</copyright>
+    <authorEmail>team@rsgallery2.nl</authorEmail>
+    <authorUrl>www.rsgallery2.nl</authorUrl>
+    <version>4.0.0</version>
+    <description>MOD_RSGALLERY2_RANDOM_IMAGES_DESC</description>
+	
+	<files>
+		<filename>mod_rsgallery2_random_images.xml</filename>
+		<filename module="mod_rsgallery2_random_images">mod_rsgallery2_random_images.php</filename>
+		<filename >Rsg2ImageRoutes.php</filename>
+		<filename >Rsg2DbSelections.php</filename>
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>images</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_rsgallery2_random_images.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rsgallery2_random_images.sys.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.mod_rsgallery2_random_images.ini</language>
+		<language tag="nl-NL">language/nl-NL/nl-NL.mod_rsgallery2_random_images.sys.ini</language>
+    </languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="count" type="text" default="1" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_PICTURES" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_PICTURES_DESC" /> 
+				<field name="display" type="list" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_DISPLAY_OPTION" description="MOD_RSGALLERY2_RANDOM_IMAGES_DISPLAY_OPTION_DESC">
+					<option value="0">MOD_RSGALLERY2_RANDOM_IMAGES_VERTICAL</option>
+					<option value="1">MOD_RSGALLERY2_RANDOM_IMAGES_HORIZONTAL</option>
+				</field>
+				<field name="usegalselect" type="radio" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_LIMIT_SPECIFIC_GALLERIES" description="MOD_RSGALLERY2_RANDOM_IMAGES_LIMIT_SPECIFIC_GALLERIES_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="galselect" type="text" default="" label="MOD_RSGALLERY2_RANDOM_IMAGES_GALLERY_IDS" description="MOD_RSGALLERY2_RANDOM_IMAGES_GALLERY_IDS_DESC">
+				</field>
+			</fieldset>
+			
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
