@@ -22,7 +22,7 @@ defined('_JEXEC') or die('Restricted access');
 				?>
 				<td>
 					<div class="mod_rsgallery2_random_images-shadow">
-						<a href="<?php echo JRoute::_("index.php?option=com_rsgallery2&amp;page=inline&amp;id=".$id_a."&amp;catid=".$catid_a."&amp;limitstart=".$limitstart_a."&amp;Itemid=".$RSG2Itemid);?>">
+						<a href="<?php echo JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);?>">
 						<img src="<?php echo imgUtils::getImgThumb($filename_a); ?>" alt="<?php echo $title_a; ?>" border="0" />
 						</a>
 					</div>

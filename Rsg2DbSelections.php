@@ -27,13 +27,13 @@ class Rsg2DbSelections
 	}	
 	
 	/**
-	* Get limited ($count) number of latest images
-	* if $gallerySelection is given only requested galleries will be returned
+	* Get limited ($count) number of random images
+	* if $gallerySelection is set then only requested galleries will be returned
      * @param int $count Restricts size of returned array
      * @param string $gallerySelection defines gallery ids to use. Example "2,3"
      * @return array of db image items
 	*/
-    public function LatestImagesLimited ($count=0, $gallerySelection=null)
+    public function RandomImagesLimited ($count=0, $gallerySelection=null)
     {
 		$database = JFactory::getDBO();
 		$query = $database->getQuery(true);
@@ -53,8 +53,9 @@ class Rsg2DbSelections
 		if ($gallerySelection) {
 			$query->where('gallery_id IN ('.$gallerySelection.')');
 		}
-		$query->order('date DESC');
-		$database->setQuery($query,0,$count);	//$count is the number of results to return
+		
+		$query->order('rand()');
+		$database->setQuery($query, 0, $count);	//$count is the number of results to return
 
 		$latestImages = $database->loadAssocList();
 		return $latestImages;
