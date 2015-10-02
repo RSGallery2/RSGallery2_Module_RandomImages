@@ -29,22 +29,25 @@ $url = JURI::base().'modules/mod_rsgallery2_random_images/css/mod_rsgallery2_ran
 $document->addStyleSheet($url);
 
 //--- Parameters --------------------------------------------------------------
-// Number of random images to display
-$count			= (int) $params->get('count', 		'1');
-// Horizontal (1) or vertical (0)
-$display_case 	= (int) $params->get('display', 		'0');
-// Select only specific gallery: 0: No, 1: Yes, or from list of galleries
-$usegalselect 	= (int) $params->get('usegalselect',	'0');
-$galselect 		= $params->get('galselect', 	'');
+// Number of  latest images to display = number of rows times the number of columns
+$countRows			= (int) $params->get('countrows', 		'1');
+$countColumns		= (int) $params->get('countcolumns',	'1');
+$count				= $countRows * $countColumns;
+// Select one or more galleries and set if their subgalleries (children) should be included
+$galleryIds			= $params->get('galleryids', 			'0'); //string, e.g. 3,8,42
+$includeChildren	= $params->get('includechildren', 		'0');
 
 // Get RSGallery2 Itemid from first component menu item for use in links
 $RSG2Itemid = Null;
+
+$database = JFactory::getDBO();
 $query = $database->getQuery(true);
 $query->select('id');
 $query->from('#__menu');
 $query->where('published = 1');
 $query->where("link like 'index.php?option=com_rsgallery2%'");
 $query->order('link');
+
 $database->setQuery($query);
 $RSG2ItemidObj = $database->loadObjectList();
 if (count($RSG2ItemidObj) > 0) {
