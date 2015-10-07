@@ -69,11 +69,9 @@ defined('_JEXEC') or die();
 							
                             break;
 						case 8 : // Test 02
-							<div class="mod_rsgallery2_random_images-shadow">
-								//<a href="<..php echo JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);..>">
-								//<img src="<..php echo imgUtils::getImgThumb($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
-								//</a>
-							</div>
+							//<a href="<..php echo JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);..>">
+							//<img src="<..php echo imgUtils::getImgThumb($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
+							//</a>
 							// JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);
 							$url = JRoute::_('index.php?option=com_rsgallery2'
 								.'&page=inline'  // difffers to above

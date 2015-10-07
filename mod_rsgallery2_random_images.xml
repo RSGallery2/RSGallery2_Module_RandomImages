@@ -12,8 +12,8 @@
 	<files>
 		<filename>mod_rsgallery2_random_images.xml</filename>
 		<filename module="mod_rsgallery2_random_images">mod_rsgallery2_random_images.php</filename>
-		<filename >Rsg2ImageRoutes.php</filename>
-		<filename >Rsg2DbSelections.php</filename>
+		<filename>Rsg2ImageRoutes.php</filename>
+		<filename>Rsg2DbSelections.php</filename>
 		<filename>index.html</filename>
 		<folder>css</folder>
 		<folder>images</folder>
