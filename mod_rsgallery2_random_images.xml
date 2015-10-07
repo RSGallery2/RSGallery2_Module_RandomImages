@@ -96,6 +96,8 @@
                     <option value="4">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_ORIGINAL_SIZE_IMAGE</option>
                     <option value="5">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_DISPLAY_SIZE_IMAGE</option>
                     <option value="6">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_THUMB_SIZE_IMAGE_VIEW</option>
+                    <option value="7">Debug Test 01</option>
+                    <option value="8">Debug Test 02</option>
                 </field>
 
 				<field name="filteringspacer3" type="spacer" hr="true" />

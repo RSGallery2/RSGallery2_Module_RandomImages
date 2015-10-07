@@ -55,7 +55,7 @@ $displayDate 		= $params->get('displaydate', 			'0');
 $dateFormat 		= $params->get('dateformat', 			'd-m-Y');
 $ImageLinkType      = $params->get('imagelinktype', 		'0');
 
-$layout             = $params->get('layout',                 'default')
+$layout             = $params->get('layout',                 'default');
 
 //--- Collect CSS styling from parameters -------------------------------
 // Get CSS image height/width attributes

@@ -58,7 +58,7 @@ class Rsg2ImageRoutes
     private function Rsg2MenuIdTmp ()
     {
 //------------------------------------------------------------------------
-        $db =& JFactory::getDBO();
+        $db = JFactory::getDBO();
 
         // for sef ?
         $lang =& JFactory::getLanguage()->getTag();

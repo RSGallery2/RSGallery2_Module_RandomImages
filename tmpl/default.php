@@ -58,6 +58,31 @@ defined('_JEXEC') or die();
                         case 6: // Link to image thumb size
                             $url = $Rsg2ImageRoutes->Link2ImageThumbSize ($image['gallery_id'], $image['name']);
                             break;
+						case 7 : // Test 01	no inline 
+							//<a href="..php echo JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&Itemid='.$RSG2Itemid);..>">
+							//	<img src="<..php echo imgUtils::getImgThumb($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
+							//</a>
+							// JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&Itemid='.$RSG2Itemid)
+							$url = JRoute::_('index.php?option=com_rsgallery2'
+								.'&id='.$image['id']
+								.'&Itemid='.$Rsg2ImageRoutes->getRsg2MenuId());
+							
+                            break;
+						case 8 : // Test 02
+							<div class="mod_rsgallery2_random_images-shadow">
+								//<a href="<..php echo JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);..>">
+								//<img src="<..php echo imgUtils::getImgThumb($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
+								//</a>
+							</div>
+							// JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);
+							$url = JRoute::_('index.php?option=com_rsgallery2'
+								.'&page=inline'  // difffers to above
+								.'&id='.$image['id']
+//								.'&catid='.$catid_a
+//								.'&limitstart='.$limitstart_a
+								.'&Itemid='.$Rsg2ImageRoutes->getRsg2MenuId());
+						
+                            break;
                     }
 
                     $HTML .= '<a href="'.JRoute::_($url).'">';  // ToDo: Title ...
