@@ -6,7 +6,7 @@
 	<copyright>(C) 2012-2015 RSGallery2 Team. All rights reserved.</copyright>
     <authorEmail>team@rsgallery2.nl</authorEmail>
     <authorUrl>www.rsgallery2.nl</authorUrl>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <description>MOD_RSGALLERY2_RANDOM_IMAGES_DESC</description>
 	
 	<files>
@@ -23,8 +23,6 @@
     <languages>
         <language tag="en-GB">language/en-GB/en-GB.mod_rsgallery2_random_images.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_rsgallery2_random_images.sys.ini</language>
-		<language tag="nl-NL">language/nl-NL/nl-NL.mod_rsgallery2_random_images.ini</language>
-		<language tag="nl-NL">language/nl-NL/nl-NL.mod_rsgallery2_random_images.sys.ini</language>
     </languages>
 
 	<config>
@@ -96,8 +94,8 @@
                     <option value="4">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_ORIGINAL_SIZE_IMAGE</option>
                     <option value="5">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_DISPLAY_SIZE_IMAGE</option>
                     <option value="6">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_THUMB_SIZE_IMAGE_VIEW</option>
-                    <option value="7">Debug Test 01</option>
-                    <option value="8">Debug Test 02</option>
+                    <!--option value="7">Debug Test 01</option>
+                    <option value="8">Debug Test 02</option-->
                 </field>
 
 				<field name="filteringspacer3" type="spacer" hr="true" />
