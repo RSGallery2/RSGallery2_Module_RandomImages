@@ -3,7 +3,7 @@
  * Class Rsg2ImageRoutes
  * Contains functions to create jroute(s) url paths to different image views
  * The functions return links to be used in Jroute() to image views inside galleries
- * Example: image from latest image view need <A> link to parent gallery
+ * Example: image from random image view need <A> link to parent gallery
  * @copyright (C) 2015 RSGallery2 Team
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  * @version 4.0.6

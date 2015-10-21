@@ -31,7 +31,7 @@ $document->addStyleSheet($url);
 global $rsgConfig;
 
 //--- Parameters --------------------------------------------------------------
-// Number of  latest images to display = number of rows times the number of columns
+// Number of random images to display = number of rows times the number of columns
 $countRows			= (int) $params->get('countrows', 		'1');
 $countColumns		= (int) $params->get('countcolumns',	'1');
 $count				= $countRows * $countColumns;
@@ -45,9 +45,9 @@ $imageHeight 		= (int) $params->get('imageheight', 	'0');
 $imageWidth 		= (int) $params->get('imagewidth', 		'0');
 $divHeight 			= (int) $params->get('divheight', 		'0');
 $divWidth 			= (int) $params->get('divwidth', 		'0');
-// ... for the div with class mod_rsgallery2_latest_galleries_name
+// ... for the div with class mod_rsgallery2_random_galleries_name
 $divNameHeight		= (int) $params->get('divnameheight', 	'0');
-//$divNameWidth		= (int) $params->get('divnamewidth', 	'0');	// The width setting of the class mod_rsgallery2_latest_galleries_attibute would overrule this, so makes no sense to do this now?
+//$divNameWidth		= (int) $params->get('divnamewidth', 	'0');	// The width setting of the class mod_rsgallery2_random_galleries_attibute would overrule this, so makes no sense to do this now?
 // Display the gallery name
 $displayName 		= $params->get('displayname', 			'0');
 // Display the date and its format
@@ -75,7 +75,7 @@ $divNameAttributes="";
 if (($divNameHeight)) {
 	$divNameAttributes .= 'style=overflow:hidden;';
 	if ($divNameHeight > 0) $divNameAttributes .= 'height:'.$divNameHeight.'px;';
-	//if ($divNameWidth > 0)  $divNameAttributes .= 'width:'.$divNameWidth.'px;';// The width setting of the class mod_rsgallery2_latest_galleries_attibute would overrule this, so makes no sense to do this now?
+	//if ($divNameWidth > 0)  $divNameAttributes .= 'width:'.$divNameWidth.'px;';// The width setting of the class mod_rsgallery2_random_galleries_attibute would overrule this, so makes no sense to do this now?
 	$divAttributes .= '"';
 }
 
@@ -161,9 +161,9 @@ if (!$superAdmin) { // No View Access check for Super Administrators
 }
 */
 
-// Query to get limited ($count) number of latest images
-$latestImages = $Rsg2DbSelections->RandomImagesLimited ($count, $gallerySelection);
-if(!$latestImages){
+// Query to get limited ($count) number of random images
+$randomImages = $Rsg2DbSelections->RandomImagesLimited ($count, $gallerySelection);
+if(!$randomImages){
 	// Error handling
 	// ToDo: Ask module administrator if a message is required (?debug) and to provide this error message
 	// enqueue message

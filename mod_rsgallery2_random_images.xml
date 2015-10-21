@@ -6,7 +6,7 @@
 	<copyright>(C) 2012-2015 RSGallery2 Team. All rights reserved.</copyright>
     <authorEmail>team@rsgallery2.nl</authorEmail>
     <authorUrl>www.rsgallery2.nl</authorUrl>
-    <version>4.0.1</version>
+    <version>4.0.2</version>
     <description>MOD_RSGALLERY2_RANDOM_IMAGES_DESC</description>
 	
 	<files>
@@ -31,8 +31,8 @@
 			
 				<field name="spacer1" type="spacer" class="text" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_IMAGES" />
 
-				<field name="countrows" type="text" default="1" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_ROWS" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_ROWS_DESC" />
-				<field name="countcolumns" type="text" default="1" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS_DESC" /> 
+				<field name="countrows" type="text" default="4" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_ROWS" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_ROWS_DESC" />
+				<field name="countcolumns" type="text" default="3" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS_DESC" /> 
 
 				<field name="filteringspacer3" type="spacer" hr="true" />
 				

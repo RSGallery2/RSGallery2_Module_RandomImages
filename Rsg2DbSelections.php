@@ -57,8 +57,8 @@ class Rsg2DbSelections
 		$query->order('rand()');
 		$database->setQuery($query, 0, $count);	//$count is the number of results to return
 
-		$latestImages = $database->loadAssocList();
-		return $latestImages;
+		$randomImages = $database->loadAssocList();
+		return $randomImages;
 	}	
 	
 }
