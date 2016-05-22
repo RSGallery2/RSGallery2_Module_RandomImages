@@ -60,7 +60,8 @@ defined('_JEXEC') or die();
                             break;
 						case 7 : // Test 01	no inline 
 							//<a href="..php echo JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&Itemid='.$RSG2Itemid);..>">
-							//	<img src="<..php echo imgUtils::getImgThumbPath($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
+							////	<img src="<..php echo imgUtils::getImgThumbPath($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
+							//	<img src="<..php echo imgUtils::getImgThumb($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
 							//</a>
 							// JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&Itemid='.$RSG2Itemid)
 							$url = JRoute::_('index.php?option=com_rsgallery2'
@@ -70,7 +71,8 @@ defined('_JEXEC') or die();
                             break;
 						case 8 : // Test 02
 							//<a href="<..php echo JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);..>">
-							//<img src="<..php echo imgUtils::getImgThumbPath($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
+							////<img src="<..php echo imgUtils::getImgThumbPath($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
+							//<img src="<..php echo imgUtils::getImgThumb($filename_a); ..>" alt="<..php echo $title_a; ..>" border="0" />
 							//</a>
 							// JRoute::_('index.php?option=com_rsgallery2&page=inline&id='.$id_a.'&catid='.$catid_a.'&limitstart='.$limitstart_a.'&Itemid='.$RSG2Itemid);
 							$url = JRoute::_('index.php?option=com_rsgallery2'
@@ -90,16 +92,19 @@ defined('_JEXEC') or die();
 				if ($displayType == 1) {
 					// *** display ***: 
 					$watermark = $rsgConfig->get('watermark');
-					$imageUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName ) : imgUtils::getImgDisplayPath( $ItemIdxName );
+					//$imageUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName ) : imgUtils::getImgDisplayPath( $ItemIdxName );
+					$imageUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName ) : imgUtils::getImgDisplay( $ItemIdxName );
 					$HTML .= '<img class="rsg2-displayImage" src="'.$imageUrl.'" alt="'.$ItemIdxName.'" title="'.$ItemIdxName.'" '.$imgAttributes.'/>';
 				} elseif ($displayType == 2) {
 					// *** original ***
 					$watermark = $rsgConfig->get('watermark');
+					//$imageOriginalUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName, 'original' ) : imgUtils::getImgOriginalPath( $ItemIdxName );
 					$imageOriginalUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName, 'original' ) : imgUtils::getImgOriginalPath( $ItemIdxName );
 					$HTML .= '<img class="rsg2-displayImage" src="'.$imageOriginalUrl.'" alt="'.$ItemIdxName.'" title="'.$ItemIdxName.'" '.$imgAttributes.'/>';
 				} else {
 					// *** thumb ***
-					$imageThumbUrl = imgUtils::getImgThumbPath( $ItemIdxName );
+					//$imageThumbUrl = imgUtils::getImgThumbPath( $ItemIdxName );
+					$imageThumbUrl = imgUtils::getImgThumb( $ItemIdxName );
 					$HTML .= '<img class="rsg2-displayImage" src="'.$imageThumbUrl.'" alt="'.$ItemIdxName.'" title="'.$ItemIdxName.'" '.$imgAttributes.'/>';
 				}
 				$name	= $image['name'];
