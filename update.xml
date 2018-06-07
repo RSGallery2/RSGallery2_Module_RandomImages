@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+	<update>
+		<name>RSGallery2 module random images update</name>
+		<description>Update matching component rsgallery2 v4.4.1</description>
+		<element>com_rsgallery2</element>
+		<type>component</type>
+		<version>4.0.2</version>
+		<downloads>
+			<downloadurl type="upgrade" format="zip">https://github.com/RSGallery2/RSGallery2_Module_RandomImages/releases/download/Version_4_0_2/RSGallery2_Module_RandomImages.4.0.2.zip</downloadurl>
+		</downloads>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer>team@rsgallery2.org</maintainer>
+		<maintainerurl>rsgallery2.org</maintainerurl>
+		<targetplatform name="joomla" version="3.*"/>
+		<client>1</client>
+		<infourl>rsgallery2.org</infourl> 		
+	</update>
+</updates>

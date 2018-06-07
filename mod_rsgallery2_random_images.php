@@ -2,7 +2,7 @@
 
 /**
 * RSGallery2 random images module: 
-* Shows random images from the Joomla extension RSGallery2 (www.rsgallery2.nl).
+* Shows random images from the Joomla extension RSGallery2 (www.rsgallery2.org).
 * @copyright (C) 2012-2018 RSGallery2 Team
 * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
 * @version 4.0.0
