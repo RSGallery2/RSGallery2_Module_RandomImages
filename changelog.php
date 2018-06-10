@@ -25,6 +25,11 @@ Legend:
 ---------------- Recent ----------------
 
 
+* --- 4.0.3 --- 2018-06-10 --- whazzup ------------------------------
+
+# Fixed wrong path to image source
+# Fixed copy and paste error: Image list had wrong name
+
 * --- 4.0.2 --- 2018-06-06 --- whazzup ------------------------------
 
 ^ Pathes to files now written with slashes '../.../...' instead of '...' . DS . '...'

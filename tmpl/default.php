@@ -15,7 +15,7 @@ defined('_JEXEC') or die();
 		$ItemIdx = 0; 
 		for ($row = 1; $row <= $countRows; $row++) {
 			// If there still is am image to show, start a new row
-			if (!isset($latestImages[$ItemIdx])) {
+			if (!isset($randomImages[$ItemIdx])) {
 				break;
 			}
 			
@@ -24,11 +24,11 @@ defined('_JEXEC') or die();
                 $HTML = '';
 				echo '<td>';
 				// If there still is a gallery image to show, show it, otherwise, continue
-				if (!isset($latestImages[$ItemIdx])) {
+				if (!isset($randomImages[$ItemIdx])) {
 					break;
 				}
 
-				$image = $latestImages[$ItemIdx];
+				$image = $randomImages[$ItemIdx];
 				// Get the name of the item to show
 				$ItemIdxName = $image['name'];
 
@@ -99,7 +99,7 @@ defined('_JEXEC') or die();
 					// *** original ***
 					$watermark = $rsgConfig->get('watermark');
 					//$imageOriginalUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName, 'original' ) : imgUtils::getImgOriginalPath( $ItemIdxName );
-					$imageOriginalUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName, 'original' ) : imgUtils::getImgOriginalPath( $ItemIdxName );
+					$imageOriginalUrl = $watermark ? waterMarker::showMarkedImage( $ItemIdxName, 'original' ) : imgUtils::getImgOriginal( $ItemIdxName );
 					$HTML .= '<img class="rsg2-displayImage" src="'.$imageOriginalUrl.'" alt="'.$ItemIdxName.'" title="'.$ItemIdxName.'" '.$imgAttributes.'/>';
 				} else {
 					// *** thumb ***
