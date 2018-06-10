@@ -145,7 +145,7 @@
 	<updateservers>
 		<server type="extension"
 		        priority="1"
-		        name="Github RSGallery2 plugin display gallery updates">https://github.com/RSGallery2/RSGallery2_Module_RandomImages/raw/master/update.xml
+		        name="Github RSGallery2 module random images updates">https://github.com/RSGallery2/RSGallery2_Module_RandomImages/raw/master/update.xml
 		</server>
 	</updateservers>
 </extension>
