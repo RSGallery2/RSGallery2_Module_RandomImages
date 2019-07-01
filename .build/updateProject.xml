@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RSG2_component" default="build">
+	<description>
+	--- RSGallery2 module update project script with phing ---
+		It applies following tasks on the files which are 
+		contained in the root folder and above from below from this script 
+		It will change the actual files inside the project
+		
+		Changes in files
+		* Version and date in manifest file 
+		* Version and date for copyright in *.php files
+		* Set lines with @since to actual date in *.php
+		* .
+		* .
+		* .
+		* .
+		* .
+		
+		command line:
+		phing -f updateProject.xml
+		phing -logfile .\updateProject.log -f updateProject.xml
+		phing -debug -logfile .\updateProject.log -f updateProject.xml
+		phing -verbose -debug -logfile .\updateProject.log -f updateProject.xml
+
+	</description>
+
+	<!-- 
+	.........................................................................
+	ToDo:
+	.........................................................................
+	* @version       $Id$ (subversion ...)
+	* .
+	* .
+	* .
+	* .
+	* .
+	-->
+
+	<!--
+	=========================================================================
+	 Parameter
+	=========================================================================
+	-->
+
+	<!-- 
+	.........................................................................
+	Version number of build
+	.........................................................................	
+	-->
+	
+    <!-- Version number of build -->
+    <property name="build.version" value="4.0.7.0" override="true" />
+    <!-- additional naming postfix -->
+    <property name="build.postfix" value="prepare." override="true" />
+    <!--property name="build.postfix" value="" override="true" / -->
+
+	<!-- 
+	.........................................................................
+	date stamps
+	.........................................................................	
+	-->
+	
+    <!-- Get the standard date for build -->
+    <!-- tstamp prefix="build.date" /-->
+
+	<tstamp>
+		<format property="dateYearMonthDay" pattern="%Y%m%d" />
+	</tstamp>
+	
+	<tstamp>
+		<format property="date.year.month.day" pattern="%Y.%m.%d" />
+	</tstamp>
+	
+	<tstamp>
+		<format property="date.day.month.year" pattern="%d. %b. %Y" />
+	</tstamp>
+	
+	<tstamp>
+		<format property="date.year" pattern="%Y" />
+	</tstamp>
+	
+	<!-- 
+	.........................................................................
+	folders
+	.........................................................................
+	-->
+	
+    <!-- Declare Project src files -->
+    <property name="root" value="./.." override="true" />
+
+    <!--property name="css" value="${root}/css" />
+    <property name="images" value="${root}/images" />
+    <property name="language" value="${root}/language" />
+    <property name="tmpl" value="${root}/tmpl" /-->
+
+    <property name="css" value="css" />
+    <property name="images" value="images" />
+    <property name="language" value="language" />
+    <property name="tmpl" value="tmpl" />
+
+
+	<!-- 
+	.........................................................................
+	file sets
+	.........................................................................
+	-->
+	
+    <!-- File set root folder -->
+    <fileset dir="${root}" id="rootSetPhp">
+        <include name="*.php" />
+    </fileset>
+
+    <fileset dir="${root}" id="rootSetXml">
+        <include name="*.xml" />
+    </fileset>
+
+    <!-- File set all folders *.php -->
+    <fileset dir="${root}" id="allFoldersSetPhp">
+        <include name="*.php" />
+        <include name="${tmpl}/**/*.php" />
+		</fileset>
+
+    <!-- File set all folders *.php -->
+    <fileset dir="${root}" id="allFoldersSetXml">
+        <include name="*.xml" />
+        <include name="${tmpl}/**/*.xml" />
+        <!--include name="${css}/**/*.xml" />
+        <include name="${images}/**/*.xml" />
+        <include name="${language}/**/*.xml" />
+        <include name="${tmpl}/**/*.xml" /-->
+    </fileset>
+
+	<!--
+	=========================================================================
+	   Targets
+	=========================================================================
+	* UpdateCopyrightYear
+	-->
+	
+	<target name="build" depends="manifestFile, AddVersion2PhpSinceDoc,
+								  UpdateCopyrightYear">	
+
+		<!--phingcall target="bar">
+			<property name="property1" value="aaaaa" />
+			<property name="foo" value="baz" />
+		</phingcall-->
+
+		<!--phingcall 
+			target="RemoveSite_ParamsIniFiles">
+		</phingcall-->
+		
+		<echo msg="build done" />
+	</target>
+	
+	<!-- 
+	.........................................................................
+	manifestFile
+	.........................................................................
+	Updates version, creationDate, and copyright date
+	-->
+	
+    <target name="manifestFile">
+		<echo msg="manifestFile start" />
+		<echo msg="build.version: ${build.version}" />
+		<echo msg="date.day.month.year: ${date.day.month.year}" />
+		
+		<reflexive>
+			<fileset dir="..">
+				<include pattern="mod_rsgallery2_random_images.xml" />
+			</fileset>
+			<filterchain>
+				<replaceregexp>
+					<regexp pattern="(?&lt;=&lt;version&gt;).*(?=&lt;)" replace="${build.version}"/>
+					<regexp pattern="(?&lt;=&lt;creationDate&gt;).*(?=&lt;)" replace="${date.day.month.year}"/>
+					<regexp pattern="(?&lt;=&lt;copyright&gt;\(c\) 2012\-).*(?= RSGallery2 Team)" replace="${date.year}"/>
+				</replaceregexp>
+			</filterchain>
+		</reflexive>
+		
+		<echo msg="manifestFile end" />
+    </target>
+
+
+	<!-- 
+	.........................................................................
+	AddVersion2PhpSinceDoc
+	.........................................................................
+	Improve php file "since" doc parts: add version * @since  x.y.z 
+	-->
+	
+    <target name="AddVersion2PhpSinceDoc">
+
+		<echo msg="AddVersion2PhpSinceDoc start" />
+		
+		<echo msg="build.version: ${build.version}" />
+		
+		<!-- echo>
+			<fileset refid="allFoldersSetPhp"/>
+		</echo -->
+		<reflexive>
+			<!-- File set root folder -->
+			<!--fileset refid="rootSetPhp">
+			</fileset-->
+
+			<!-- File set all folders -->
+			<fileset refid="allFoldersSetPhp">
+			</fileset>
+
+			<filterchain>
+				<replaceregexp>
+
+					<regexp pattern="@since(?=\s*$)" replace="@since X ${build.version}" />
+					
+					 
+				</replaceregexp>
+			</filterchain>
+		</reflexive>
+		
+		<echo msg="AddVersion2PhpSinceDoc end" />
+    </target>
+
+	<!-- 
+	.........................................................................
+	UpdateCopyrightYear
+	.........................................................................
+	Improve php file "since" doc parts: add version * @since  x.y.z 
+	-->
+	
+    <target name="UpdateCopyrightYear">
+
+		<echo msg="UpdateCopyrightYear start *.php" />
+		
+		<echo msg="build.version: ${build.version}" />
+		
+		<!-- 
+		*.xml
+		-->
+		<reflexive>
+			<!-- File set root folder -->
+			<!--fileset refid="rootSetPhp">
+			</fileset-->
+
+			<!-- File set all folders -->
+			<fileset refid="allFoldersSetPhp">
+			</fileset>
+
+			<filterchain>
+				<replaceregexp>
+
+					<!--regexp pattern="@since(?=\s*$)" replace="@since ${build.version}" /-->
+					<regexp pattern="(?&lt;=\([cC]\)\s)(\d+\s*-\s*)\d+" replace="${1}${date.year}" />
+
+				</replaceregexp>
+			</filterchain>
+		</reflexive>
+		
+		<!-- 
+		*.xml
+		-->
+		<echo msg="UpdateCopyrightYear start *.xml" />
+		
+		<reflexive>
+			<!-- File set root folder -->
+			<!--fileset refid="rootSetXml">
+			</fileset-->
+
+			<!-- File set all folders -->
+			<fileset refid="allFoldersSetXml">
+			</fileset>
+
+			<filterchain>
+				<replaceregexp>
+					<!--regexp pattern="(?&lt;=&lt;copyright&gt;\(c\) 2003\-).*(?= RSGallery2 Team)" replace="${date.year}"/-->
+					<!--regexp pattern="(?&lt;=&lt;copyright&gt;\([cC]\)\s) yyyy 2003\-).*(?= RSGallery2 Team)" replace="${date.year}"/-->
+					<regexp pattern="(?&lt;=\([cC]\)\s)(\d+\s*-\s*)\d+" replace="${1}${date.year}" />
+				</replaceregexp>
+			</filterchain>
+		</reflexive>
+		
+		
+		
+		<echo msg="UpdateCopyrightYear end" />
+    </target>
+
+	
+		
+
+</project>

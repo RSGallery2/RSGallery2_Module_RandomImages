@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.0" method="upgrade">
-    <name>mod_rsgallery2_random_images</name>
-    <author>RSGallery2 Team</author>
-	<creationDate>07 Jun 2018</creationDate>
-	<copyright>(C) 2012-2018 RSGallery2 Team. All rights reserved.</copyright>
+	<name>mod_rsgallery2_random_images</name>
+	<version>4.0.7.0</version>
+	<author>RSGallery2 Team</author>
+	<creationDate>01. Jul. 2019</creationDate>
+	<copyright>(C) 2012-2019 RSGallery2 Team. All rights reserved.</copyright>
 	<license>This component is released under the GNU/GPL License</license>
-    <authorEmail>team@rsgallery2.org</authorEmail>
-    <authorUrl>www.rsgallery2.org</authorUrl>
-    <version>4.0.3</version>
-    <description>MOD_RSGALLERY2_RANDOM_IMAGES_DESC</description>
-	
+	<authorEmail>team@rsgallery2.org</authorEmail>
+	<authorUrl>www.rsgallery2.org</authorUrl>
+	<description>MOD_RSGALLERY2_RANDOM_IMAGES_DESC</description>
+
 	<files>
 		<filename>mod_rsgallery2_random_images.xml</filename>
 		<filename module="mod_rsgallery2_random_images">mod_rsgallery2_random_images.php</filename>
@@ -21,30 +21,30 @@
 		<folder>tmpl</folder>
 		<folder>language</folder>
 	</files>
-	
-    <languages>
-        <language tag="en-GB">language/en-GB/en-GB.mod_rsgallery2_random_images.ini</language>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rsgallery2_random_images.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_rsgallery2_random_images.sys.ini</language>
-    </languages>
+	</languages>
 
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
-			
+
 				<field name="spacer1" type="spacer" class="text" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_IMAGES" />
 
 				<field name="countrows" type="text" default="4" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_ROWS" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_ROWS_DESC" />
-				<field name="countcolumns" type="text" default="3" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS_DESC" /> 
+				<field name="countcolumns" type="text" default="3" label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS" description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS_DESC" />
 
 				<field name="filteringspacer3" type="spacer" hr="true" />
-				
+
 				<field name="galleryids" type="text" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_GALLERY_IDS" description="MOD_RSGALLERY2_RANDOM_IMAGES_GALLERY_IDS_DESC" />
 				<field name="includechildren" type="radio" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_INCLUDE_CHILDREN" description="MOD_RSGALLERY2_RANDOM_IMAGES_INCLUDE_CHILDREN_DESC"
 				class="btn-group btn-group-yesno">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
-				
+
 				<field name="filteringspacer5" type="spacer" hr="true" />
 
 				<field name="filteringspacer5" type="spacer" hr="true" />
@@ -55,20 +55,20 @@
 					<option value="2">MOD_RSGALLERY2_RANDOM_IMAGES_DISPLAY_TYPE_ORIGINAL</option>
 				</field>
 
-                <field name="filteringspacer1" type="spacer" hr="true" />
+				<field name="filteringspacer1" type="spacer" hr="true" />
 
-                <field name="spacer_imagecsssize" type="spacer" class="text"
+				<field name="spacer_imagecsssize" type="spacer" class="text"
 					label="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGECSSSIZE_SPACER"
 				/>
 
-                <field name="imageheight" type="text" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_HEIGHT" description="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_HEIGHT_DESC" />
+				<field name="imageheight" type="text" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_HEIGHT" description="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_HEIGHT_DESC" />
 				<field name="imagewidth" type="text" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_WIDTH" description="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_WIDTH_DESC" />
 				<field name="spacer_divcsssize" type="spacer" class="text"
 					label="MOD_RSGALLERY2_RANDOM_IMAGES_DIVCSSSIZE_SPACER"
 				/>
 				<field name="divheight" type="text" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_DIV_HEIGHT" description="MOD_RSGALLERY2_RANDOM_IMAGES_DIV_HEIGHT_DESC" />
 				<field name="divwidth" type="text" default="0" label="MOD_RSGALLERY2_RANDOM_IMAGES_DIV_WIDTH" description="MOD_RSGALLERY2_RANDOM_IMAGES_DIV_WIDTH_DESC" />
-				
+
 				<field name="spacer_divnamecsssize" type="spacer" class="text"
 					label="MOD_RSGALLERY2_RANDOM_IMAGES_DIVNAMECSSSIZE_SPACER"
 				/>
@@ -88,24 +88,24 @@
 				</field>
 				<field name="dateformat" type="text" default="d-m-Y" label="MOD_RSGALLERY2_RANDOM_IMAGES_DATE_FORMAT" description="MOD_RSGALLERY2_RANDOM_IMAGES_DATE_FORMAT_DESC">
 				</field>
-				
+
 				<field name="filteringspacer2" type="spacer" hr="true" />
 
-                <field name="imagelinktype" type="list" default="1" label="MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE" description="MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_DESC">
-                    <option value="0">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_NO_LINK</option>
-                    <option value="1">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_PARENT_GALLERY_VIEW</option>
-                    <option value="2">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_GALLERY_SINGLE_IMAGE_VIEW</option>
-                    <option value="3">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_GALLERY_SLIDE_SHOW_VIEW</option>
-                    <option value="4">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_ORIGINAL_SIZE_IMAGE</option>
-                    <option value="5">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_DISPLAY_SIZE_IMAGE</option>
-                    <option value="6">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_THUMB_SIZE_IMAGE_VIEW</option>
-                    <!--option value="7">Debug Test 01</option>
-                    <option value="8">Debug Test 02</option-->
-                </field>
+				<field name="imagelinktype" type="list" default="1" label="MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE" description="MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_DESC">
+					<option value="0">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_NO_LINK</option>
+					<option value="1">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_PARENT_GALLERY_VIEW</option>
+					<option value="2">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_GALLERY_SINGLE_IMAGE_VIEW</option>
+					<option value="3">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_GALLERY_SLIDE_SHOW_VIEW</option>
+					<option value="4">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_ORIGINAL_SIZE_IMAGE</option>
+					<option value="5">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_DISPLAY_SIZE_IMAGE</option>
+					<option value="6">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_THUMB_SIZE_IMAGE_VIEW</option>
+					<!--option value="7">Debug Test 01</option>
+					<option value="8">Debug Test 02</option-->
+				</field>
 
 				<field name="filteringspacer3" type="spacer" hr="true" />
 			</fieldset>
-			
+
 			<fieldset
 				name="advanced">
 				<field
@@ -144,7 +144,7 @@
 			</fieldset>
 		</fields>
 	</config>
-	
+
 	<updateservers>
 		<server type="extension"
 		        priority="1"
