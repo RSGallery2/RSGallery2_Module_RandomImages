@@ -20,7 +20,8 @@ require_once dirname(__FILE__) . '/Rsg2DbSelections.php';
 require_once dirname(__FILE__) . '/Rsg2ImageRoutes.php';
 
 // Initialise RSGallery2 and other variables
-require_once(JPATH_BASE.'/administrator/components/com_rsgallery2/init.rsgallery2.php');
+//require_once(JPATH_BASE.'/administrator/components/com_rsgallery2/init.rsgallery2.php');
+require_once(JPATH_ADMINISTRATOR.'/components/com_rsgallery2/init.rsgallery2.php');
 //$database = &JFactory::getDbo();
 
 // Add styling
