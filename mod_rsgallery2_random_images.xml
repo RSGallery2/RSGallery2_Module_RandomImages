@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.0" method="upgrade">
+<extension type="module" 
+		   version="3.0" 
+		   client="site" 
+		   method="upgrade"
+>
 	<name>mod_rsgallery2_random_images</name>
 	<version>4.0.7.0</version>
 	<author>RSGallery2 Team</author>
