@@ -56,8 +56,17 @@
     <!--property name="build.postfix" value="prepare." override="true" /-->
     <property name="build.postfix" value="" override="true" />
     <property name="type" value="Module" override="true" />
-    <property name="name" value="LatestImages" override="true" />
+    <property name="name" value="RandomImages" override="true" />
 
+	<!-- 
+	.........................................................................
+	
+	.........................................................................	
+	-->
+	
+	<property name="type" value="Module" override="true" />
+    <property name="name" value="RandomImages" override="true" />
+	<property name="extension" value="mod_rsgallery2_random_images" />
 
 	<!-- 
 	.........................................................................
@@ -213,11 +222,11 @@
             <fileset refid="pluginsSet" />
         </copy-->
          <!-- Copy the manifest.xml -->
+        <copy file="${root}/${extension}.xml" tofile="${buildDir}/tmp/${extension}.xml" />
+        <copy file="${root}/${extension}.php" tofile="${buildDir}/tmp/${extension}.php" />
         <copy file="${root}/changelog.php" tofile="${buildDir}/tmp/changelog.php" />
         <copy file="${root}/index.html" tofile="${buildDir}/tmp/index.html" />
         <copy file="${root}/LICENSE.txt" tofile="${buildDir}/tmp/LICENSE.txt" />
-        <copy file="${root}/mod_rsgallery2_latest_galleries.xml" tofile="${buildDir}/tmp/mod_rsgallery2_latest_galleries.xml" />
-        <copy file="${root}/mod_rsgallery2_latest_galleries.php" tofile="${buildDir}/tmp/mod_rsgallery2_latest_galleries.php" />
         <copy file="${root}/Rsg2DbSelections.php" tofile="${buildDir}/tmp/Rsg2DbSelections.php" />
 
         <!--copy file="${admin}/install.php" tofile="${buildDir}/tmp/install.php" /-->
@@ -241,7 +250,7 @@
 		<echo msg="date.day.month.year: ${date.day.month.year}" />
 		<reflexive>
 			<fileset dir="${buildDir}/tmp/">
-				<include pattern="mod_rsgallery2_random_images.xml" />
+				<include pattern="${extension}.xml" />
 			</fileset>
 			<filterchain>
 				<replaceregexp>
@@ -253,7 +262,6 @@
 		</reflexive>
 		<echo msg="manifestFile end" />
     </target>
-
 
 
 </project>

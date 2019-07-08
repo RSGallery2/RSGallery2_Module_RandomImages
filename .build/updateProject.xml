@@ -54,6 +54,17 @@
     <property name="build.postfix" value="prepare." override="true" />
     <!--property name="build.postfix" value="" override="true" / -->
 
+
+	<!-- 
+	.........................................................................
+	
+	.........................................................................	
+	-->
+	
+	<property name="type" value="Module" override="true" />
+    <property name="name" value="RandomImages" override="true" />
+	<property name="extension" value="mod_rsgallery2_random_images" />
+
 	<!-- 
 	.........................................................................
 	date stamps
@@ -79,6 +90,7 @@
 		<format property="date.year" pattern="%Y" />
 	</tstamp>
 	
+	
 	<!-- 
 	.........................................................................
 	folders
@@ -97,7 +109,6 @@
     <property name="images" value="images" />
     <property name="language" value="language" />
     <property name="tmpl" value="tmpl" />
-
 
 	<!-- 
 	.........................................................................
@@ -166,7 +177,7 @@
 		
 		<reflexive>
 			<fileset dir="..">
-				<include pattern="mod_rsgallery2_random_images.xml" />
+				<include pattern="${extension}.xml" />
 			</fileset>
 			<filterchain>
 				<replaceregexp>
