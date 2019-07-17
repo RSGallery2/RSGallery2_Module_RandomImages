@@ -228,6 +228,7 @@
         <copy file="${root}/index.html" tofile="${buildDir}/tmp/index.html" />
         <copy file="${root}/LICENSE.txt" tofile="${buildDir}/tmp/LICENSE.txt" />
         <copy file="${root}/Rsg2DbSelections.php" tofile="${buildDir}/tmp/Rsg2DbSelections.php" />
+        <copy file="${root}/Rsg2ImageRoutes.php" tofile="${buildDir}/tmp/Rsg2ImageRoutes.php" />
 
         <!--copy file="${admin}/install.php" tofile="${buildDir}/tmp/install.php" /-->
         <echo msg="Copy was successful" />
