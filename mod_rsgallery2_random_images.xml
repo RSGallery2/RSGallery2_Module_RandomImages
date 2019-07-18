@@ -8,8 +8,8 @@
 	<version>4.0.7.0</version>
 	<author>RSGallery2 Team</author>
 	<creationDate>01. Jul. 2019</creationDate>
-	<copyright>(C) 2012-2019 RSGallery2 Team. All rights reserved.</copyright>
-	<license>This component is released under the GNU/GPL License</license>
+	<copyright>(C) 2012-2019 RSGallery2 Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
 	<authorEmail>team@rsgallery2.org</authorEmail>
 	<authorUrl>www.rsgallery2.org</authorUrl>
 	<description>MOD_RSGALLERY2_RANDOM_IMAGES_DESC</description>
@@ -50,13 +50,13 @@
                 />
 				<field 
                     name="countcolumns" 
-                    type="text" default="3" 
+                    type="text" 
+					default="3" 
                     label="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS" 
                     description="MOD_RSGALLERY2_RANDOM_IMAGES_NUMBER_OF_COLUMNS_DESC" 
                 />
-
 				<field 
-                    name="filteringspacer3" 
+					name="filteringspacer1" 
                     type="spacer" 
                     hr="true" 
                 />
@@ -71,23 +71,17 @@
 				<field 
                     name="includechildren" 
                     type="radio" 
+					class="btn-group btn-group-yesno"
                     default="0" 
                     label="MOD_RSGALLERY2_RANDOM_IMAGES_INCLUDE_CHILDREN" 
                     description="MOD_RSGALLERY2_RANDOM_IMAGES_INCLUDE_CHILDREN_DESC"
-					class="btn-group btn-group-yesno"
 				>
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
 
 				<field 
-                    name="filteringspacer5" 
-                    type="spacer" 
-                    hr="true" 
-                />
-
-				<field 
-                    name="filteringspacer5" 
+					name="filteringspacer2" 
                     type="spacer" 
                     hr="true" 
                 />
@@ -105,8 +99,9 @@
 				</field>
 
 				<field 
-                    name="filteringspacer1" 
-                    type="spacer" hr="true" 
+					name="filteringspacer3" 
+					type="spacer" 
+					hr="true" 
                 />
 
 				<field 
@@ -122,16 +117,14 @@
                     default="0" 
                     label="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_HEIGHT" 
                     description="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_HEIGHT_DESC" 
-                />
-				
+                />				
 				<field 
                     name="imagewidth" 
                     type="text" 
 					default="0" 
                     label="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_WIDTH" 
                     description="MOD_RSGALLERY2_RANDOM_IMAGES_IMAGE_WIDTH_DESC" 
-                />
-				
+                />				
 				<field 
                     name="spacer_divcsssize" 
                     type="spacer" 
@@ -211,7 +204,7 @@
 				</field>
 
 				<field 
-                    name="filteringspacer2" 
+					name="filteringspacer5" 
                     type="spacer" 
                     hr="true" 
                 />
@@ -230,12 +223,14 @@
 					<option value="4">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_ORIGINAL_SIZE_IMAGE</option>
 					<option value="5">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_DISPLAY_SIZE_IMAGE</option>
 					<option value="6">MOD_RSGALLERY2_RANDOM_IMAGES_LINK_TYPE_THUMB_SIZE_IMAGE_VIEW</option>
-					<!--option value="7">Debug Test 01</option>
-					<option value="8">Debug Test 02</option-->
+					<!--
+					<option value="7">Debug Test 01</option>
+					<option value="8">Debug Test 02</option
+					-->
 				</field>
 
 				<field 
-                    name="filteringspacer3" 
+					name="filteringspacer6" 
                     type="spacer" 
                     hr="true" 
                 />
@@ -247,35 +242,43 @@
 					name="layout"
 					type="modulelayout"
 					label="JFIELD_ALT_LAYOUT_LABEL"
-					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" 
+				/>
 				<field
 					name="moduleclass_sfx"
 					type="text"
 					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" 
+				/>
 				<field
 					name="cache"
 					type="list"
 					default="1"
 					label="COM_MODULES_FIELD_CACHING_LABEL"
-					description="COM_MODULES_FIELD_CACHING_DESC">
-					<option
-						value="1">JGLOBAL_USE_GLOBAL</option>
-					<option
-						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
 				</field>
 				<field
 					name="cache_time"
 					type="text"
 					default="900"
 					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
-					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" 
+				/>
 				<field
 					name="cachemode"
 					type="hidden"
-					default="static">
+					default="static"
+				>
 					<option value="static"></option>
 				</field>
+				<field 
+					name="filteringspacer7" 
+					type="spacer" 
+					hr="true" 
+				/>
 			</fieldset>
 		</fields>
 	</config>
@@ -283,7 +286,9 @@
 	<updateservers>
 		<server type="extension"
 		        priority="1"
-		        name="Github RSGallery2 module random images updates">https://github.com/RSGallery2/RSGallery2_Module_RandomImages/raw/master/update.xml
+		        name="Github RSGallery2 module random images 
+				updates">https://raw.githubusercontent.com/RSGallery2/RSGallery2_Project/master/UpdateServer/RSG2_Module_RandomImages_update.xml
+
 		</server>
 	</updateservers>
 </extension>
