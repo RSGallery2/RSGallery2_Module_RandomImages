@@ -15,7 +15,7 @@ The RSGallery2 Module *RandomImages* shows as the name suggests some random imag
 	* Gallery display image
 	* Gallery thumb image
 
-##General
+## General
 
 * User defined number of images are selected and shown like in the RSGallery2 gallery view.
  * The images may be aligned in row and columns.
@@ -24,7 +24,7 @@ The RSGallery2 Module *RandomImages* shows as the name suggests some random imag
  * The resulting set may be "garnered" with CSS styles set in the backend.
  * Each image may lead to the origin picture or the parent gallery or ...
 
-##Parameter in backend
+## Parameter in backend
 
 
 ![](https://github.com/RSGallery2/RSGallery2_Project/blob/master/Documentation/ImagesUsedInDoc/moduleRandomImages.backend.01.png?raw=true)
@@ -40,7 +40,7 @@ The number of displayed images is the result from `Count = row number times colu
 
 * (3) Select galleries to show images from
 
-e.g. 3,8,42. The used galleries may be restricted to a selection. Please use a comma separated list. Select galleries to show images from. Multiple galleries are comma separated, e.g. '3,8,42' or '5'. If you want to show images from all galleries enter '0'. The access level of user will be taken into account, so if a user is not allowed to view gallery 2 its images won't show even if you put it here.The gallery id numbers to use can be found here: Backend > Components > RSGallery2 > Galleries, in the column ID.
+  e.g. 3,8,42. The used galleries may be restricted to a selection. Please use a comma separated list. Select galleries to show images from. Multiple galleries are comma separated, e.g. '3,8,42' or '5'. If you want to show images from all galleries enter '0'. The access level of user will be taken into account, so if a user is not allowed to view gallery 2 its images won't show even if you put it here.The gallery id numbers to use can be found here: Backend > Components > RSGallery2 > Galleries, in the column ID.
 
 * (4) Include sub galleries: (No/Yes)
 
@@ -87,7 +87,7 @@ e.g. 3,8,42. The used galleries may be restricted to a selection. Please use a c
 
 * (8) Date format:
 
-Select format type the date should display (for example, d-m-Y | d/m/Y | m-d-Y : G-i). See <http://nl3.php.net/date> for more info about this.
+  Select format type the date should display (for example, d-m-Y | d/m/Y | m-d-Y : G-i). See <http://nl3.php.net/date> for more info about this.
 
 * (9) Link image to view type
 
